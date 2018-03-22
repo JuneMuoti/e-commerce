@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{%block content%}
+
+<head>
+<link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+<style>
+h1,h2{
+font-family: 'Henny Penny', cursive;
+}
+</style>
+</head>
+<div class="uk-container uk-margin-large-bottom">
+<div class="uk-container uk-margin-large-top">
+
+  <div class="row">
+    {% if searched_product%}
+      <h2>Found {{ category|length }} categories in searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 categories for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+  </div>
+<div class="uk-container">
+
+  <div class="uk-card">
+
+
+    {% for product in searched_product %}
+
+    <li>{{product.name}}
+      {% if product.product_image %}
+      <img src="product.product_image.url">
+        {% endif %}</li>
+
+
+
+
+    {% endfor %}
+
+
+  </div>
+</div>
+</div>
+
+
+
+{%endblock %}
