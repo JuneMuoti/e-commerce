@@ -1,0 +1,69 @@
+
+<nav class="uk-navbar-container"uk-navbar-transparent uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="{%url 'ecommerce:index'%}">Home</a></li>
+
+
+
+            <li>
+                {% if user.is_authenticated %}
+
+                        <li><a href="">Kariokor Online</a></li>
+                        <li><a href="">Categories</a>
+                        <div class="uk-navbar-dropdown">
+                   <ul class="uk-nav uk-navbar-dropdown-nav">
+                       <li class="uk-active"><a href="">shoes</a></li>
+                       <li><a href="">accessories</a></li>
+                       <li><a href="">Art pieces</a></li>
+
+
+
+                   </ul>
+               </div>
+               </li>
+
+                        <li><a href="/logout">Logout</a></li>
+
+                    </ul>
+                </div>
+            </li>
+         {% else %}
+            <li><a class='btn btn-default' href="/accounts/login">Login</a></li>
+              <li><a href="/accounts/register">Sign up</a></li>
+
+        </ul>
+   {% endif %}
+    </div>
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav">
+
+            <li>
+              <form class="uk-search uk-search-default uk-margin-medium-right uk-margin-small-top" role="search" action="{% url 'ecommerce:search_results'%}">
+                <span uk-search-icon></span>
+                <input class="uk-search-input" type="search" placeholder="Search items"name='category'>
+              </form>
+
+            </li>
+            </div>
+            <div class="uk-navbar-right">
+
+                <ul class="uk-navbar-nav uk-margin-large-right">
+
+
+
+
+
+                <li>  <a href="" uk-icon="user"></a></li>
+                  <li>  <a href="{%url 'ecommerce:cart'%}" uk-icon="cart"></a></li>
+
+
+
+
+
+          </ul>
+      </div>
+
+</nav>
