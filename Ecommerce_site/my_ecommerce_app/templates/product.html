@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{%block content%}
+
+
+
+  <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-margin-large-top uk-margin-large-bottom" uk-grid >
+    <div>
+      <img src="{{item.product_image.url}}"width="700" height="500
+        0">
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-width-1-2@m">
+     <div class="uk-card-header">
+         <div class="uk-grid-small uk-flex-middle" uk-grid>
+             <div class="uk-width-auto">
+                 <img class="uk-border-circle" width="40" height="40" src="{{item.product_image.url}}">
+             </div>
+             <div class="uk-width-expand">
+
+
+                 <p class="uk-card-title uk-margin-remove-bottom uk-text-capitalize">{{item.description}}</p>
+
+             </div>
+         </div>
+     </div>
+     <div class="uk-card-body">
+
+            <p>Price:Ksh{{item.price}}</p>
+
+            <p>Quantity: <input type="text" value="1" /></p>
+
+<a class="uk-button uk-button-secondary uk-width-1-1" href="">
+  <span uk-icon="icon: cart; " class="uk-margin-large-right">
+</span>Add to cart</a>
+
+<p>Cart: <a href="">{{item.cart.count}}</a></p>
+     </div>
+     <div class="uk-card-footer">
+
+     </div>
+ </div>
+    </div>
+
+</div>
+
+
+
+
+{%endblock %}
